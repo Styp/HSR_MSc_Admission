@@ -1,0 +1,46 @@
+\documentclass{article}
+% Damit die Verwendung der deutschen Sprache nicht ganz so umst\"andlich wird,
+% sollte man die folgenden Pakete einbinden: 
+\usepackage[utf8]{inputenc}% erm\"oglich die direkte Eingabe der Umlaute 
+\usepackage[T1]{fontenc}
+
+\usepackage{textcomp}
+\usepackage{lmodern}
+\usepackage{titlesec}
+\usepackage{ngerman} % hiermit werden deutsche Bezeichnungen genutzt und 
+                     % die W\"orter werden anhand der neue Rechtschreibung 
+		     % automatisch getrennt.  
+		     
+		     \usepackage{blindtext}
+
+\pagenumbering{gobble}% Remove page numbers (and reset to 1)
+
+\usepackage[left=1.8cm,right=1.8cm]{geometry}
+
+
+
+
+\begin{document}
+\section*{Abstract}
+\textit{Themenideen im Bereich 'Parallele Programmierung' für meine Arbeiten im Masterstudium} \\
+
+Bei der Auswahl der Themen sollte im Kern eine parallelisierbare Fragestellung ersichtlich sein. Bewusst wurden mehrere Themen ausgearbeitet, die teilweise durch persönliches Interesse oder den Berufsaltag inspiriert wurden. Die Themen hängen oft an komplexen Fragestellungen an, welche im Büro aus Zeitgründen oder Kostengründen nie in Erwägung gezogen wurden. Die Faszination für ein Problem beginnt dabei erst dort, wo neuland begangen werden kann. Aus meiner Sicht sind diese Themenvorschläge 
+
+Aus diesem Grund möchte ich gerne folgende 3 Themen vorschlagen:
+
+\begin{itemize}
+	\item{\textbf{GPU Vector Tiles:} \\
+	Ursprünglich wurden Kartendaten in Kacheln ausgeliefert. Diese Kacheln auch Tiles genannt haben in einem ungeschriebenn Standart die grösse von 256x256 Pixeln und werden im Webbrowser zu einem fertigen Bild zusammen gesetzt. Sobald der User seinen Kartenausschnitt in eine richtuing verscheibt, werden nur die Kacheln nach geladen, die fehlen. Dieser Mechanismus hat den Vorteil, das jeweils nicht ein vollständiges Bild im Server gerendert werden muss und dann an den Webbrowser übertragen wird. Dieser Standart wird nun dank stärkeren Mobilgeräten und starken Frontend Plattformen wie HTML5 und JavaScript streitig gemacht. Google mit ihrer Vorreiterstellung setzt nun stark auf Vektordaten. Diese Vektordaten werden in einem komprimierten Format übertragen und der clientseitige Webbroser baut daraus das Bild auf.
+	Da diese Vektordaten grundsätzlich immer noch in einer Kachelstruktur abegelgt werden, ist die Überlegung nahe diese zu parallelisieren. Der Prozess muss einem bestehenden Datensatz die wichtigen Informationen zu der aktuellen Kachel extrahieren und unnütze informationen weglassen. Der Prozess an sich ist nicht sonderlich komplex, aber die Anzahl der Objekte machen es zu einem storagetechnischem Abendteuer. Da der Prozes
+	}
+
+	\item{\textbf{Predictive SQL}
+	Die meisten Businessanwendungen beziehen heute ihre Daten aus relationalen Datenbanken. Diese Datenbanken sind oft mit historischen Datenbeständen gefüllt und nur ein kleiner Bestandteil wird für das Tagesgeschäft benötigt. In vielen Firmen sind die Tagesgeschäfte sehr vorhersehbare Prozesse. Aus diesem Grunde ist es naheliegend eine Vorhersage über die Abfragen zu machen, welche benötigt werden. Beispielsweise werden tagesaktuelle Daten in der Produktion benötigt oder oder aktuelle Monatsrechnungen in der Buchhaltung. Diese SQL Abfragen sind anhand könnten Anhand ihrer Muster vorhersehbar sein. Aus dieser Vermutung lässt sich auf ein Verfahren schliessen, welches mit Hilfe von Machine Learning ein akzeptables Resultat liefert. Dieser Umstand und die Datenmenge würden eine Implementierung zugunsten der Parallelisierung sprechen.
+	}
+	
+	\item{\textbf{DSL for GIS} \\
+	Heute sind GIS Daten hauptsächlich in relationallen Datenbanken abgelegt. Oracle implementiert mit Oracle Spatial eine Variante und auf der OpenSource seite ist PostGIS in der Postgresql Community stark vertreten. Leider stellt sich aber heraus, dass GIS Daten ihren Nutzen entfalten, wenn sie in Relation zu einander gestelt werden, oder wenn sie zusammenhänge aufzeigen. Die wahren Features 
+	}
+
+\end{itemize}
+\end{document}
