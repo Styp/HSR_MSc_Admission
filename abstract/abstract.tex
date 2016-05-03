@@ -19,20 +19,20 @@
 \begin{document}
 \section*{Abstract}
 \textit{Themenideen im Bereich 'Parallele Programmierung' für meine Arbeiten im Masterstudium} \\
-\vspace{5pt} \\
+\vspace{3pt} \\
 Bei der Auswahl der Themen sollte im Kern eine parallelisierbare Fragestellung ersichtlich sein. Bewusst wurden mehrere Themen ausgearbeitet, die teilweise durch persönliches Interesse oder den Berufsalltag inspiriert wurden. Die Themen knüpfen oft an bereits bestehenden Fragestellungen an, welche aus Zeit oder Kostengründen im kommerziellen Umfeld nie in Erwägung gezogen wurden. Die Probleme in sich strahlen einen gewissen Reiz aus, deren Reiz es Wert ist Neuland mit hohem Risiko zu begehen. \\
-\vspace{1pt} \\
+\vspace{0.5pt} \\
 Aus diesem Grund möchte ich gerne folgende 3 Themen vorschlagen:
 \begin{itemize}
 	\item{\textbf{GPU Vector Tiles:} \\
 	 Kacheln auch Tiles genannt transportieren Kartenausschnitte zwischen Server und Client über das Internet. Diese Tiles haben in einem ungeschriebenen Standard die Grösse von 256x256 Pixeln und werden im Webbrowser zu einem fertigen Bild zusammengesetzt. Dieses Konzept ist historisch motiviert - als Internetverbindungen noch langsam waren und Server die Rechenleistung eines Modernen Mobiltelefons besassen, war dies die effizienteste Möglichkeit grosse Bildausschnitte zu übertragen. Diese Implementierung wird nun dank stärkeren Mobilgeräten und Frontend Plattformen wie HTML5 und JavaScript langsam abgelöst. Google mit ihrer Vorreiterstellung setzt nun stark auf Vektordaten. Diese Vektordaten werden in einem komprimierten Format übertragen und der clientseitige Webbrowser baut daraus das Bild auf. Die Vorteile dieser Technologie liegen hauptsächlich in einer flexibleren Darstellung und einem geringeren Verbrauch an Speicherplatz. Analog zur Kacheltechnologie müssen aber viele kleine Dateien aus einem Masterdatensatz erstellt werden um einen flüssigen Betrieb der Anwendung zu garantieren. Dieser Prozess benötigt enorm viel Zeit und Rechenleistung. Da es sich aber um einen relativ unkomplizierten Prozess handelt, stellt sich die Frage ob man diese Vorarbeit nicht auch in einer Modernen Grafikkarte durchführen könnte. Die Vorteile wären die Möglichkeit eine sehr hohe Parallelisierung zu Implementieren, welche ein spannendes Thema darstellen könnte.
 	}
 
-	\item{\textbf{Predictive SQL}
+	\item{\textbf{Predictive SQL:} \\
 	Die meisten Businessanwendungen beziehen heute ihre Daten aus relationalen Datenbanken. Diese Datenbanken sind oft mit historischen Datenbeständen gefüllt und nur ein kleiner Bestandteil wird für das Tagesgeschäft benötigt. In vielen Firmen sind die Tagesgeschäfte sehr vorhersehbare Prozesse, welche ein Bruchteil dieser Datenmenge darstellt. Aus diesem Grunde ist es naheliegend eine Vorhersage über die Abfragen zu machen, welche in unmittelbarer Zukunft benötigt werden. Beispielsweise sind tagesaktuelle Daten in der Produktion vonnöten oder aktuelle Monatsrechnungen müssen für die Buchhaltung bereitgestellt werden. Diese SQL Abfragen könnten anhand ihrer Erscheinungsmuster vorhersehbar sein. Aus dieser Vermutung entsteht der Gedanke, ein Verfahren zu entwickeln welches mit Hilfe von Machine Learning ein akzeptables Resultat liefern kann. Dieser Umstand und die Datenmenge wären gewiss eine spannende Problemstellung um sich intensiver in Themen der Parallelisierung zu beschäftigen.
 	}
 	
-	\item{\textbf{DSL for GIS} \\
+	\item{\textbf{DSL for GIS: } \\
 	Geodaten werden oft in relationalen Datenbanken abgelegt. Es dominieren verschiedene Produkte den Markt die das Spektrum von der kostengünstigen OpenSource Lösung bis hin zum kommerziellen Flaggschiff abdecken. Leider muss festgestellt werden, dass relationale Datenbanken nicht wirklich für die Strukturen von Geodaten geschaffen sind. Diese Objekte werden sozusagen in ein bereits bestehendes Konzept gezwängt. Aus diesem Umstand resultieren teilweise verschachtelte Abfragen, welche nur schwer leserlich sind. Somit wäre eine domainspezifische Sprache, welche sowohl die Natur der Daten besser abbildet, als auch eine Parallelisierung gewisser Berechnungen ermöglicht ein interessantes Thema.
 	}
 
