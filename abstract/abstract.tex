@@ -7,11 +7,7 @@
 \usepackage{textcomp}
 \usepackage{lmodern}
 \usepackage{titlesec}
-\usepackage{ngerman} % hiermit werden deutsche Bezeichnungen genutzt und 
-                     % die W\"orter werden anhand der neue Rechtschreibung 
-		     % automatisch getrennt.  
-		     
-		     \usepackage{blindtext}
+\usepackage{ngerman}
 
 \pagenumbering{gobble}% Remove page numbers (and reset to 1)
 
@@ -23,23 +19,21 @@
 \begin{document}
 \section*{Abstract}
 \textit{Themenideen im Bereich 'Parallele Programmierung' für meine Arbeiten im Masterstudium} \\
-
-Bei der Auswahl der Themen sollte im Kern eine parallelisierbare Fragestellung ersichtlich sein. Bewusst wurden mehrere Themen ausgearbeitet, die teilweise durch persönliches Interesse oder den Berufsaltag inspiriert wurden. Die Themen hängen oft an komplexen Fragestellungen an, welche im Büro aus Zeitgründen oder Kostengründen nie in Erwägung gezogen wurden. Die Faszination für ein Problem beginnt dabei erst dort, wo neuland begangen werden kann. Aus meiner Sicht sind diese Themenvorschläge 
-
+\vspace{5pt} \\
+Bei der Auswahl der Themen sollte im Kern eine parallelisierbare Fragestellung ersichtlich sein. Bewusst wurden mehrere Themen ausgearbeitet, die teilweise durch persönliches Interesse oder den Berufsalltag inspiriert wurden. Die Themen knüpfen oft an bereits bestehenden Fragestellungen an, welche aus Zeit oder Kostengründen im kommerziellen Umfeld nie in Erwägung gezogen wurden. Die Probleme in sich strahlen einen gewissen Reiz aus, deren Reiz es Wert ist Neuland mit hohem Risiko zu begehen. \\
+\vspace{1pt} \\
 Aus diesem Grund möchte ich gerne folgende 3 Themen vorschlagen:
-
 \begin{itemize}
 	\item{\textbf{GPU Vector Tiles:} \\
-	Ursprünglich wurden Kartendaten in Kacheln ausgeliefert. Diese Kacheln auch Tiles genannt haben in einem ungeschriebenn Standart die grösse von 256x256 Pixeln und werden im Webbrowser zu einem fertigen Bild zusammen gesetzt. Sobald der User seinen Kartenausschnitt in eine richtuing verscheibt, werden nur die Kacheln nach geladen, die fehlen. Dieser Mechanismus hat den Vorteil, das jeweils nicht ein vollständiges Bild im Server gerendert werden muss und dann an den Webbrowser übertragen wird. Dieser Standart wird nun dank stärkeren Mobilgeräten und starken Frontend Plattformen wie HTML5 und JavaScript streitig gemacht. Google mit ihrer Vorreiterstellung setzt nun stark auf Vektordaten. Diese Vektordaten werden in einem komprimierten Format übertragen und der clientseitige Webbroser baut daraus das Bild auf.
-	Da diese Vektordaten grundsätzlich immer noch in einer Kachelstruktur abegelgt werden, ist die Überlegung nahe diese zu parallelisieren. Der Prozess muss einem bestehenden Datensatz die wichtigen Informationen zu der aktuellen Kachel extrahieren und unnütze informationen weglassen. Der Prozess an sich ist nicht sonderlich komplex, aber die Anzahl der Objekte machen es zu einem storagetechnischem Abendteuer. Da der Prozes
+	 Kacheln auch Tiles genannt transportieren Kartenausschnitte zwischen Server und Client über das Internet. Diese Tiles haben in einem ungeschriebenen Standard die Grösse von 256x256 Pixeln und werden im Webbrowser zu einem fertigen Bild zusammengesetzt. Dieses Konzept ist historisch motiviert - als Internetverbindungen noch langsam waren und Server die Rechenleistung eines Modernen Mobiltelefons besassen, war dies die effizienteste Möglichkeit grosse Bildausschnitte zu übertragen. Diese Implementierung wird nun dank stärkeren Mobilgeräten und Frontend Plattformen wie HTML5 und JavaScript langsam abgelöst. Google mit ihrer Vorreiterstellung setzt nun stark auf Vektordaten. Diese Vektordaten werden in einem komprimierten Format übertragen und der clientseitige Webbrowser baut daraus das Bild auf. Die Vorteile dieser Technologie liegen hauptsächlich in einer flexibleren Darstellung und einem geringeren Verbrauch an Speicherplatz. Analog zur Kacheltechnologie müssen aber viele kleine Dateien aus einem Masterdatensatz erstellt werden um einen flüssigen Betrieb der Anwendung zu garantieren. Dieser Prozess benötigt enorm viel Zeit und Rechenleistung. Da es sich aber um einen relativ unkomplizierten Prozess handelt, stellt sich die Frage ob man diese Vorarbeit nicht auch in einer Modernen Grafikkarte durchführen könnte. Die Vorteile wären die Möglichkeit eine sehr hohe Parallelisierung zu Implementieren, welche ein spannendes Thema darstellen könnte.
 	}
 
 	\item{\textbf{Predictive SQL}
-	Die meisten Businessanwendungen beziehen heute ihre Daten aus relationalen Datenbanken. Diese Datenbanken sind oft mit historischen Datenbeständen gefüllt und nur ein kleiner Bestandteil wird für das Tagesgeschäft benötigt. In vielen Firmen sind die Tagesgeschäfte sehr vorhersehbare Prozesse. Aus diesem Grunde ist es naheliegend eine Vorhersage über die Abfragen zu machen, welche benötigt werden. Beispielsweise werden tagesaktuelle Daten in der Produktion benötigt oder oder aktuelle Monatsrechnungen in der Buchhaltung. Diese SQL Abfragen sind anhand könnten Anhand ihrer Muster vorhersehbar sein. Aus dieser Vermutung lässt sich auf ein Verfahren schliessen, welches mit Hilfe von Machine Learning ein akzeptables Resultat liefert. Dieser Umstand und die Datenmenge würden eine Implementierung zugunsten der Parallelisierung sprechen.
+	Die meisten Businessanwendungen beziehen heute ihre Daten aus relationalen Datenbanken. Diese Datenbanken sind oft mit historischen Datenbeständen gefüllt und nur ein kleiner Bestandteil wird für das Tagesgeschäft benötigt. In vielen Firmen sind die Tagesgeschäfte sehr vorhersehbare Prozesse, welche ein Bruchteil dieser Datenmenge darstellt. Aus diesem Grunde ist es naheliegend eine Vorhersage über die Abfragen zu machen, welche in unmittelbarer Zukunft benötigt werden. Beispielsweise sind tagesaktuelle Daten in der Produktion vonnöten oder aktuelle Monatsrechnungen müssen für die Buchhaltung bereitgestellt werden. Diese SQL Abfragen könnten anhand ihrer Erscheinungsmuster vorhersehbar sein. Aus dieser Vermutung entsteht der Gedanke, ein Verfahren zu entwickeln welches mit Hilfe von Machine Learning ein akzeptables Resultat liefern kann. Dieser Umstand und die Datenmenge wären gewiss eine spannende Problemstellung um sich intensiver in Themen der Parallelisierung zu beschäftigen.
 	}
 	
 	\item{\textbf{DSL for GIS} \\
-	Heute sind GIS Daten hauptsächlich in relationallen Datenbanken abgelegt. Oracle implementiert mit Oracle Spatial eine Variante und auf der OpenSource seite ist PostGIS in der Postgresql Community stark vertreten. Leider stellt sich aber heraus, dass GIS Daten ihren Nutzen entfalten, wenn sie in Relation zu einander gestelt werden, oder wenn sie zusammenhänge aufzeigen. Die wahren Features 
+	Geodaten werden oft in relationalen Datenbanken abgelegt. Es dominieren verschiedene Produkte den Markt die das Spektrum von der kostengünstigen OpenSource Lösung bis hin zum kommerziellen Flaggschiff abdecken. Leider muss festgestellt werden, dass relationale Datenbanken nicht wirklich für die Strukturen von Geodaten geschaffen sind. Diese Objekte werden sozusagen in ein bereits bestehendes Konzept gezwängt. Aus diesem Umstand resultieren teilweise verschachtelte Abfragen, welche nur schwer leserlich sind. Somit wäre eine domainspezifische Sprache, welche sowohl die Natur der Daten besser abbildet, als auch eine Parallelisierung gewisser Berechnungen ermöglicht ein interessantes Thema.
 	}
 
 \end{itemize}
